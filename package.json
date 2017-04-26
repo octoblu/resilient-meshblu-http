@@ -1,6 +1,6 @@
 {
   "name": "resilient-meshblu-http",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A resilient Meshblu HTTP library.",
   "main": "index.js",
   "scripts": {
