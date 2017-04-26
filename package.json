@@ -14,9 +14,11 @@
   "author": "Octoblu, Inc <npm@octoblu.com>",
   "license": "MIT",
   "dependencies": {
-    "coffee-script": "^1.12.5"
+    "coffee-script": "^1.12.5",
+    "meshblu-http": "^9.9.0"
   },
   "devDependencies": {
+    "@octoblu/shmock": "^0.9.1",
     "chai": "^3.5.0",
     "chai-subset": "^1.5.0",
     "env-test": "^1.0.0",
@@ -24,6 +26,7 @@
     "mocha-multi": "^0.11.0",
     "mocha-osx-reporter": "^0.1.2",
     "nyc": "^10.2.0",
+    "server-destroy": "^1.0.1",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.9.0"
   },
