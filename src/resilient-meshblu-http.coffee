@@ -1,12 +1,11 @@
 _           = require 'lodash'
 MeshbluHttp = require 'meshblu-http'
 async       = require 'async'
-debug       = require('debug')('smartspaces-resilient-meshblu-http')
 
 class ResilientMeshbluHttp
   constructor: ({ meshbluConfig, @retryConfig, @timeout }) ->
     throw new Error 'ResilientMeshbluHttp: requires meshbluConfig' unless meshbluConfig?
-    @timeout ?= 30 * 1000
+    @timeout     ?= 30 * 1000
     @retryConfig ?= { tries: 5, interval: 10 }
     meshbluConfig = _.cloneDeep meshbluConfig
     meshbluConfig.timeout = @timeout
@@ -26,7 +25,6 @@ class ResilientMeshbluHttp
     async.retry @retryConfig, (next) =>
       @meshbluHttp.search query,projection, next
     , callback
-
 
   message: (message, callback) =>
     async.retry @retryConfig, (next) =>

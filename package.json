@@ -1,6 +1,6 @@
 {
   "name": "resilient-meshblu-http",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A resilient Meshblu HTTP library.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
   "author": "Octoblu, Inc <npm@octoblu.com>",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.3.0",
     "coffee-script": "^1.12.5",
+    "lodash": "^4.17.4",
     "meshblu-http": "^9.9.0"
   },
   "devDependencies": {
