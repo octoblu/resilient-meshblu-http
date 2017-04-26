@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '7'
+branches:
+  only:
+  - "/^v[0-9]/"
+after_success:
+- npm run coverage
+- npm run mocha:json
+- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.octoblu.com/bash)
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: o4oAQYnI5fZNAxMXLAsyHe53JVEKCcH2zhGTl4ZhjlrcmNDSzJGAfzJ2OHsZQqGwgThe4xtsd5L9Awy+bLldOc+lJFI4gud21UzDBZeSDIuCW0BvIEul8bVorp8YHxGKvzuxHhWZ2U7SGetKi23r21oCmkuwRudjnBMUJDtV/tvQiXuGS3yOUm1H6eS9LRotvhSApMo6hkgci/yyLLuHSK96y95QiXT/eTXD00YC7MxHPchjw4YiolZy8snSrKOrNHznUpbThkbGR1WQRhlJarU09W2XtSvBBtcvmNSqp20CUVgU2kht7pDML4xsOp++z1sJIa4hZfUImsmIjH3WuZrnbN8I+qq3jS4/Ir5Hu0BtomyhtAPUxUppPbmOG5PzjUMoNnQg/5qfaOYLGZ8ms86w7qNMKMBbbBaLIIRLsbgdJOccpxOwRN20CUSj6s4t0F9EtvdZOM8z0mnvVoB6GVsNJlw6FBrEB1knigv1KzdOAe4yYRp+psw+I1r22MBcR+qX1mKaXe61Fi35Nt/7Ba4m/47XYz28QKH2zUvxNKVfcLiuLcSxbcNGNWPYD+BWc8uGn16CJcXVDDYliO+1niZUu2WalTgSvYpmg9oNgCbST0+83VhR2Gs4/GrDsR/jnSaHDEVm5teArQ7+JZRY3D51hKeauF4+LAzcBdEFHIo=
+  on:
+    tags: true
+    repo: octoblu/resilient-meshblu-http
